@@ -1,13 +1,30 @@
 # TransformDictCC
-Transforms dict.cc dictionary downloads
 
+Transforms dict.cc dictionary downloads  
+Use as pre-processor before something like tab2opf.exe (see <https://1manfactory.com/create-your-own-kindle-dictionary-for-every-language-for-free/>)
+
+  
+## Usage:
 - open "Prepare_dict_cc_dict.dib" in Visual Studio Code (requires the extension "Polyglot Notebooks")
 - download dictionary "DE->EN (tab-delimited, UTF-8)" from [dict.cc](https://www1.dict.cc/translation_file_request.php?l=e)
 - adjust paths to your source/target files
 - then just run it.  
+   
+  
+## Effect:
 
----
+Code transforms something like this:
 
+>(alles) Heer {n} des Himmels [Luther] \t (all the) starry hosts {pl} [New International Version] \t noun \t [bibl.]
+  
+to this:  
+  
+>starry hosts \t (alles) Heer {n} des Himmels [Luther]
+
+now, the englisch term before the tab ("starry hosts") is much better searchable!  
+
+  
+## Code:
 It's all just this snippet really:
 
 ```csharp
